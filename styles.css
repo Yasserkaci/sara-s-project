@@ -1,0 +1,513 @@
+:root {
+  --primary: #000;
+  --secondary: rgb(24 24 27);
+  --border: rgba(63, 63, 70, 0.4);
+
+  --title: rgb(244 244 245);
+  --subtitle: rgb(161 161 170);
+
+  --bgHeader: rgb(39, 39, 42);
+  --blue: rgb(93, 188, 252);
+
+  --icon-hover: #d4d4d8;
+
+  --container-padding: 4.8rem;
+}
+
+.light {
+  --primary: rgb(250, 250, 250);
+  --secondary: rgb(255, 255, 255);
+  --border: rgba(202, 202, 202, 0.518);
+
+  --title: rgb(39 39 42);
+  --subtitle: rgb(82 82 91);
+
+  --bgHeader: rgb(253, 253, 253);
+  --blue: rgb(0, 149, 246);
+
+  --icon-hover: #333;
+}
+
+
+body,html{
+  height: 80%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  color: var(--title);
+
+}
+
+
+
+.page-template-default .entry-header,
+.page-template-default .entry-content {
+  margin: 0;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: var(--secondary);
+}
+
+.sidebar-container {
+  width: 250px;
+  overflow-y: auto;
+  /* Ajout de défilement vertical uniquement pour la barre latérale */
+  border-right: 1px solid var(--border);
+}
+
+.content-wrapper {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+/* Add styles for the content container to limit its height */
+.content-container {
+  flex: 1;
+  max-height: 100vh;
+  /* Limit the height of the content container */
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--primary);
+  border-right: 1px solid var(--border);
+  padding: 20px;
+  overflow-y: auto;
+  /* Ajout de défilement vertical uniquement */
+  height: 100vh;
+  /* Hauteur maximale de la barre latérale */
+}
+
+.sidebar h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  display: flex;
+  /* Utilisation de flexbox pour aligner le logo et le texte */
+  align-items: center;
+}
+
+.sidebar h1 img {
+  margin-right: 10px;
+  /* Espacement entre le logo et le texte */
+}
+
+.sidebar .user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  /* Augmenter l'espace sous les infos utilisateur */
+}
+
+.sidebar .user-info .avatar {
+  width: 40px;
+  /* Augmenter la taille de l'avatar */
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--subtitle);
+  margin-right: 15px;
+  /* Espacement plus large */
+}
+
+.sidebar .user-info .username {
+  font-weight: bold;
+  font-size: 18px;
+  /* Augmenter la taille du texte du nom d'utilisateur */
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+  /* Augmenter l'espacement entre chaque élément de la liste */
+}
+
+.sidebar li a {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  /* Augmenter le padding pour un meilleur espacement interne */
+  text-decoration: none;
+  color: #333;
+  border-radius: 5px;
+}
+
+.sidebar li a img {
+  margin-right: 10px;
+  /* Espacement entre l'image et le texte */
+  vertical-align: middle;
+  /* Alignement vertical au centre */
+  width: 30px;
+  /* Taille des icônes ajustée */
+  height: 30px;
+}
+
+.sidebar .sub-options {
+  margin-left: 25px;
+  /* Espacement pour les sous-options */
+  display: none;
+  /* Masquer les sous-options par défaut */
+}
+
+.sidebar .sub-options ul {
+  padding-left: 15px;
+  /* Espacement pour les sous-options */
+}
+
+.sidebar .sub-options li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.sidebar .sub-options li a {
+  padding: 5px 10px;
+  /* Ajustement du padding */
+}
+
+.sidebar .sub-options li a img {
+  margin-right: 10px;
+  /* Espacement entre l'image et le texte */
+  vertical-align: middle;
+  /* Alignement vertical au centre */
+  width: 20px;
+  /* Taille des icônes ajustée */
+  height: 20px;
+}
+
+.content-wrapper {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  /* Ajout de défilement vertical uniquement pour la partie du contenu */
+}
+
+.content {
+  display: none;
+  /* Masquer le contenu par défaut */
+}
+
+.active {
+  display: block;
+  /* Afficher le contenu actif */
+}
+
+form label,
+form input,
+form textarea,
+form button {
+  margin-bottom: 10px;
+  /* Espacement entre chaque élément */
+}
+
+.content h2 {
+  font-size: 40px;
+  /* Taille de la police pour les titres h2 */
+}
+
+.content p {
+  font-size: 16px;
+  /* Taille de la police pour les paragraphes */
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  width: 75%;
+  /* Largeur du champ de texte */
+  padding: 10px;
+  /* Espacement interne */
+  border: 1px solid #ccc;
+  /* Bordure avec couleur de fond */
+  border-radius: 5px;
+  /* Coins arrondis */
+  margin-bottom: 5px;
+  /* Espacement entre les champs */
+  box-sizing: border-box;
+  /* Inclure le padding et la bordure dans la largeur totale */
+}
+
+form button[type="submit"] {
+  padding: 10px 20px;
+  /* Espacement interne du bouton */
+  border: none;
+  /* Supprimer la bordure par défaut */
+  border-radius: 5px;
+  /* Coins arrondis */
+  background-color: #007bff;
+  /* Couleur de fond du bouton */
+  color: #fff;
+  /* Couleur du texte */
+  cursor: pointer;
+  /* Curseur de type pointer au survol */
+  transition: background-color 0.3s ease;
+  /* Transition pour une animation fluide */
+}
+
+/* Style pour le bouton "Submit" au survol */
+form button[type="submit"]:hover {
+  background-color: #0056b3;
+  /* Nouvelle couleur de fond au survol */
+}
+
+.checkbox-label {
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+cursor: pointer;
+}
+
+/* Style pour les champs de formulaire */
+form label,
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form button {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style pour les messages d'erreur */
+.error-message {
+  color: red;
+  margin-top: 10px;
+  display: none;
+}
+
+/* Style pour les messages de succès */
+.success-message {
+  color: green;
+  margin-top: 10px;
+  display: none;
+}
+
+/* Style pour le code de confirmation */
+#step2 {
+  display: none;
+  text-align: center;
+}
+
+#step2 p {
+  font-size: 20px;
+}
+
+.code-input-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.code-input {
+  width: 40px;
+  height: 40px;
+  margin: 0 5px;
+  text-align: center;
+  font-size: 24px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style pour le bouton "Confirmer" */
+#confirmCodeBtn {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Style au survol du bouton "Confirmer" */
+#confirmCodeBtn:hover {
+  background-color: #0056b3;
+}
+
+/* Réduction de l'espace entre les champs du formulaire de contact */
+.contact-form label,
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  margin-bottom: 5px; /* Réduction de l'espacement entre chaque élément */
+}
+
+/* Espacement ajouté au-dessus du bouton du formulaire de contact */
+.contact-form button[type="submit"] {
+  margin-top: 10px; /* Ajout d'un espacement au-dessus du bouton */
+}
+
+/* Réduction de l'espace entre les champs */
+.contact-form label {
+  margin-bottom: 5px; /* Réduction de la marge sous les labels */
+}
+
+.contact-form input[type="email"],
+.contact-form input[type="text"] {
+  margin-bottom: 5px; /* Ajoute un petit espacement sous les champs */
+}
+
+.contact-form textarea {
+  margin-bottom: 5px; /* Ajoute un petit espacement sous le champ de texte */
+}
+
+.contact-form button[type="submit"] {
+  margin-top: 10px; /* Ajout d'un espacement au-dessus du bouton */
+}
+.option-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* Largeur minimale pour les options */
+.option-container .option {
+  flex: 1;
+  min-width: 300px; /* Ajustez cette valeur en fonction de la largeur souhaitée pour chaque option */
+  padding: 5px 10px;
+  background-color: #f8f9fa;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Style pour les options sélectionnées */
+.option-container .option:hover {
+  background-color: #e2e6ea;
+}
+/* Style pour le contenu du statut */
+.status-content {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style pour le titre du statut */
+.status-content h2 {
+  font-size: 36px;
+  color: #ff7f50; /* Couleur orange */
+  margin-bottom: 20px;
+}
+
+/* Style pour les options de statut */
+.status-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Espacement entre les options */
+}
+
+/* Style pour chaque option de statut */
+.status-option {
+  display: flex;
+  align-items: center;
+}
+
+.status-option input[type="radio"] {
+  margin-right: 10px;
+  transform: scale(1.5); /* Rendre les boutons radio plus gros */
+  cursor: pointer;
+}
+
+.status-option label {
+  font-size: 18px;
+  color: #333; /* Couleur du texte */
+  cursor: pointer;
+}
+
+/* Style pour le bouton "Sauvegarder" */
+#saveStatusBtn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  background-color: #5c8bc5; 
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#saveStatusBtn:hover {
+  background-color: #3a6995; 
+}
+
+/* Style pour la zone de sélection du statut */
+#status-options {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Style pour chaque bouton radio */
+input[type="radio"] {
+  display: none; /* Cacher le bouton radio natif */
+}
+
+/* Style pour les labels des boutons radio */
+label {
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+/* Style pour le label sélectionné */
+input[type="radio"]:checked + label {
+  background-color: #007bff; /* Couleur lorsque sélectionné */
+  color: #fff;
+}
+
+/* Style pour le message de statut */
+#status-message {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+.language-options {
+  display: flex;
+  justify-content: space-between; /* Pour répartir les options de langue horizontalement */
+  max-width: 400px; /* Ajustez la largeur maximale selon vos besoins */
+  margin: 0 auto; /* Centrer les options horizontalement */
+}
+
+.language-option {
+  text-align: center;
+}
+
+.language-option img {
+  width: 100px; /* Ajustez la taille de l'image selon vos besoins */
+  height: 100px;
+  border-radius: 50%; /* Pour obtenir une forme de bulle */
+}
+
+.language-option p {
+  margin-top: 10px; /* Espace entre l'image et le texte */
+}
+
