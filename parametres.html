@@ -198,15 +198,15 @@
         <h2 id="language-title">Langue</h2>
         <p id="language-instruction">Choisissez votre langue :</p>
         <div class="language-options">
-          <button class="language-option" onclick="selectLanguage('fr')" style="margin: 5px;color: var(--title); background-color: var(--secondary) ;border: 1px var(--border) solid;id="fr-btn">
+          <button class="language-option" onclick="selectLanguage('fr')" style="margin: 5px;color: var(--title); background-color: var(--secondary) ;border: 1px var(--border) solid;"id="fr-btn">
             <img src="C:\Users\Condor\Downloads\french.png" alt="Français" >
             <p>Français</p>
           </button>
-          <button class="language-option" onclick="selectLanguage('en')"style="margin: 5px;color: var(--title); background-color: var(--secondary) ;border: 1px var(--border) solid; id="en-btn">
+          <button class="language-option" onclick="selectLanguage('en')"style="margin: 5px;color: var(--title); background-color: var(--secondary) ;border: 1px var(--border) solid; "id="en-btn">
             <img src="C:\Users\Condor\Downloads\british.png" alt="Anglais">
             <p>Anglais</p>
           </button>
-          <button class="language-option" onclick="selectLanguage('ar')" style="margin: 5px;color: var(--title); background-color: var(--secondary) ;border: 1px var(--border) solid;id="ar-btn">
+          <button class="language-option" onclick="selectLanguage('ar')"style="margin: 5px;color: var(--title); background-color: var(--secondary) ;border: 1px var(--border) solid; "id="ar-btn">
            <img src="C:\Users\Condor\Downloads\algerian.png" alt="Arabe">
             <p>Arabe</p>
           </button>
@@ -313,7 +313,7 @@
       <p>Veuillez confirmer ou refuser les autorisations suivantes :</p>
       <form>
         <label for="gallery-access" class="checkbox-label">
-          <input type="checkbox" id="gallery-access"> Accéder à la galerie
+          <input type="checkbox" id="gallery-access" "> Accéder à la galerie
         </label><br>
         <label for="contacts-access" class="checkbox-label">
           <input type="checkbox" id="contacts-access"> Accéder aux contacts
@@ -383,9 +383,9 @@
           <p>Pour changer votre mot de passe, veuillez suivre les étapes ci-dessous :</p>
           <form onsubmit="verifyOldPassword(); return false;">
             <label for="oldPassword">Ancien mot de passe :</label><br>
-            <input type="password" id="oldPassword" name="oldPassword" required><br><br>
+            <input type="password" id="oldPassword" name="oldPassword" required style="color: var(--title);"><br><br>
             <button type="submit">Confirmer</button>
-            <p id="oldPasswordError" class="error-message" style="display: none; color: red;">Le mot de passe est
+            <p id="oldPasswordError" class="error-message" style="display: none; ">Le mot de passe est
               incorrect.</p>
             <p><a href="#" onclick="forgotPassword();">J'ai oublié mon mot de passe</a></p>
           </form>
